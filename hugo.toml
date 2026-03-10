@@ -1,0 +1,70 @@
+baseURL = "https://chsangwon.github.io/"
+languageCode = "ko-KR"
+title = "chsangwon"
+theme = "stack"
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  description = "test"
+  mainSections = ["post"]
+  rssFullContent = true
+
+  [params.footer]
+    since = 2026
+    customText = ""
+
+  [params.dateFormat]
+    published = ":date_full"
+    lastUpdated = ":date_full"
+
+  [params.sidebar]
+    compact = false
+    avatar = ""
+
+  [params.article]
+    headingAnchor = true
+    math = false
+    toc = true
+    readingTime = true
+
+    [params.article.list]
+      showTags = true
+
+    [params.article.license]
+      enabled = false
+      default = "Licensed under CC BY-NC-SA 4.0"
+
+  [params.colorScheme]
+    toggle = true
+    default = "auto"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+    [menu.main.params]
+      icon = "home"
+
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+    [menu.main.params]
+      icon = "hash"
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+    [menu.main.params]
+      icon = "tag"
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+    [menu.main.params]
+      icon = "user"
