@@ -1,70 +1,67 @@
-baseURL = "https://chsangwon.github.io/"
-languageCode = "ko-KR"
-title = "chsangwon"
-theme = "stack"
+baseURL                = "https://chsangwon.github.io/"
+languageCode           = "ko-KR"
+title                  = "chsangwon"
+defaultContentLanguage = "ko"
+hasCJKLanguage         = true
+theme                  = "stack"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
 
 [pagination]
-  pagerSize = 5
+    pagerSize = 5
+
+[permalinks]
+    post = "/p/:slug/"
+    page = "/:slug/"
 
 [params]
-  description = "test"
-  mainSections = ["post"]
-  rssFullContent = true
+    description = "test"
+    mainSections = ["post"]
+    rssFullContent = true
+    favicon = "img/avatar.png"
 
-  [params.footer]
-    since = 2026
-    customText = ""
+    [params.footer]
+        since = 2026
 
-  [params.dateFormat]
-    published = ":date_full"
-    lastUpdated = ":date_full"
+    [params.sidebar]
+        emoji    = "🖥️"
+        subtitle = "기술 블로그"
+        avatar   = "img/avatar.png"
 
-  [params.sidebar]
-    compact = false
-    avatar = ""
+    [params.article]
+        headingAnchor = true
+        math          = false
+        toc           = true
+        readingTime   = true
 
-  [params.article]
-    headingAnchor = true
-    math = false
-    toc = true
-    readingTime = true
+        [params.article.list]
+            showTags = true
 
-    [params.article.list]
-      showTags = true
+        [params.article.license]
+            enabled = false
+            default = "Licensed under CC BY-NC-SA 4.0"
 
-    [params.article.license]
-      enabled = false
-      default = "Licensed under CC BY-NC-SA 4.0"
+    [params.widgets]
+        homepage = [
+            { type = "search" },
+            { type = "archives", params = { limit = 5 } },
+            { type = "categories", params = { limit = 10 } },
+            { type = "tag-cloud", params = { limit = 10 } },
+        ]
+        page = [{ type = "toc" }]
 
-  [params.colorScheme]
-    toggle = true
-    default = "auto"
+    [params.colorScheme]
+        toggle  = true
+        default = "auto"
 
 [menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-    [menu.main.params]
-      icon = "home"
+    [[menu.social]]
+        identifier = "github"
+        name       = "GitHub"
+        url        = "https://github.com/chsangwon"
 
-  [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 2
-    [menu.main.params]
-      icon = "hash"
-
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-    [menu.main.params]
-      icon = "tag"
-
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 4
-    [menu.main.params]
-      icon = "user"
+        [menu.social.params]
+            icon = "brand-github"
